@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar">
     <div class="logo">FoodFusion</div>
     <div class="toggle-menu">
@@ -10,5 +13,11 @@
         <li><a href="#resources">Resources</a></li>
         <li><a href="contact.php">Contact Us</a></li>
     </ul>
-    <button class="join-us-btn">Join Us</button>
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <form action="logout.php" method="POST" style="display: inline;">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    <?php else: ?>
+        <button class="join-us-btn">Join Us</button>
+    <?php endif; ?>
 </nav>

@@ -51,7 +51,7 @@
 <script src="./assets/js/scripts.js"></script>
 
 <?php
-// require 'scripts.php';
+require 'scripts.php';
 ?>
 
 </body>

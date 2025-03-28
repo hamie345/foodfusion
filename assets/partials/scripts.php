@@ -77,6 +77,10 @@
                         // Handle the JSON response
                         if (response.success) {
                             showMessageModal("Login Successful!", response.message);
+                            // Reload the page after a short delay to show the success message
+                            setTimeout(function() {
+                                location.reload();
+                            }, 2000); // Adjust the delay as needed
                         } else {
                             // Show error message in modal
                             showMessageModal("Login Failed", response.message);

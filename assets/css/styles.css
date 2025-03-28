@@ -208,7 +208,7 @@ body {
 
 
 /* Button Styling */
-.join-us-btn {
+.join-us-btn, .logout-btn {
   background-color: #673ab7;
   color: white;
   border: none;
@@ -217,7 +217,7 @@ body {
   cursor: pointer;
 }
 
-.join-us-btn:hover {
+.join-us-btn:hover, .logout-btn:hover {
   background-color: #512da8;
 }
 

@@ -185,7 +185,7 @@
         loadRecipes({});
 
         // Filter form submission
-        $('.filter-form').submit(function(event) {
+        $('.apply-filters-btn').click(function(event) {
             event.preventDefault();
 
             var filters = {
