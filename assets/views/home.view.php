@@ -212,6 +212,36 @@
     </div>
 </section>
 
+<!-- Title Bar -->
+<div class="title-bar">
+    <h1>Testimonial</h1>
+    <p>See what our customers say about our recipes</p>
+    <hr>
+</div>
+
+<!-- Three Cards Section -->
+<div class="about-cards">
+    <div class="card">
+        <h3>Our Culinary Philosophy:<em>4 - Very Good</em></h3>
+        <p>At FoodFusion, we believe in the power of fresh ingredients, simple techniques, and a passion for flavor. We're dedicated to providing recipes that inspire creativity in the kitchen. - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Our Core Values:<em>4 - Very Good</em></h3>
+        <p>We value community, creativity, and accessibility. We strive to create a space where everyone can share their culinary experiences and learn from others. - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Meet the Team:<em>4 - Very Good</em></h3>
+        <p>Our team is made up of passionate food lovers, chefs, and developers dedicated to making cooking accessible and enjoyable for everyone. Get to know us! - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Meet the Team:<em>4 - Very Good</em></h3>
+        <p>Our team is made up of passionate food lovers, chefs, and developers dedicated to making cooking accessible and enjoyable for everyone. Get to know us! - "<em>Hawah</em>"</p>
+    </div>
+</div>
+
 <section class="subscription-section">
     <div class="subscription-container">
         <h2>Subscribe to Our Newsletter</h2>

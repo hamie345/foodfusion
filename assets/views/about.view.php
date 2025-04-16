@@ -166,10 +166,17 @@
 </style>
 
 <!-- Three Cards Section -->
-    <?php
-    require './assets/partials/badge.php';
-    ?>
+<?php
+require './assets/partials/badge.php';
+?>
+<!-- Title Bar -->
+<div class="title-bar">
+    <h1>Our Culinary Philosophy</h1>
+    <p>Discover what drives us to bring the best recipes and cooking tips to your table.</p>
+    <hr>
+</div>
 <div class="about-cards">
+
     <div class="card">
         <img src="./assets/images/bg2.jpg" alt="Philosophy">
         <h3>Our Culinary Philosophy</h3>

@@ -73,6 +73,106 @@
     .rating-form .submit-btn:hover {
         background-color: #311b92;
     }
+
+    /* Three Cards Section */
+    .about-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .about-cards .card {
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .about-cards .card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-cards .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .about-cards .card h3 {
+        padding: 10px;
+        font-size: 1.5rem;
+        color: #512da8;
+    }
+
+    .about-cards .card p {
+        padding: 10px;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: #333;
+    }
+
+    /* Two-Column Section */
+    .two-column-section {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* Title Bar */
+    .title-bar {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .title-bar h1 {
+        font-size: 2.5rem;
+        color: #512da8;
+    }
+
+    .title-bar p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .title-bar hr {
+        margin-top: 10px;
+        border: none;
+        border-top: 2px solid #ddd;
+        width: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Content Row */
+    .content-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Image Column */
+    .image-column {
+        flex: 1;
+    }
+
+    .image-column img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Description Column */
+    .description-column {
+        flex: 1;
+    }
+
+    .description-column p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333;
+    }
 </style>
 
 <section class="rating-page">
@@ -114,6 +214,36 @@
         </div>
     </div>
 </section>
+
+<!-- Title Bar -->
+<div class="title-bar">
+    <h1>Testimonial</h1>
+    <p>See what our customers say about our recipes</p>
+    <hr>
+</div>
+
+<!-- Three Cards Section -->
+<div class="about-cards">
+    <div class="card">
+        <h3>Our Culinary Philosophy:<em>4 - Very Good</em></h3>
+        <p>At FoodFusion, we believe in the power of fresh ingredients, simple techniques, and a passion for flavor. We're dedicated to providing recipes that inspire creativity in the kitchen. - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Our Core Values:<em>4 - Very Good</em></h3>
+        <p>We value community, creativity, and accessibility. We strive to create a space where everyone can share their culinary experiences and learn from others. - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Meet the Team:<em>4 - Very Good</em></h3>
+        <p>Our team is made up of passionate food lovers, chefs, and developers dedicated to making cooking accessible and enjoyable for everyone. Get to know us! - "<em>Hawah</em>"</p>
+    </div>
+
+    <div class="card">
+        <h3>Meet the Team:<em>4 - Very Good</em></h3>
+        <p>Our team is made up of passionate food lovers, chefs, and developers dedicated to making cooking accessible and enjoyable for everyone. Get to know us! - "<em>Hawah</em>"</p>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
