@@ -81,62 +81,155 @@
         object-fit: cover;
         border-radius: 5px;
     }
+
+
+    /* Subscription Section */
+    .subscription-section {
+        background: rgba(103, 58, 183, 0.6);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 50px 20px;
+        text-align: center;
+        color: white;
+        margin-top: 50px;
+    }
+
+    .subscription-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .subscription-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .subscription-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .subscription-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .subscription-form input[type="email"] {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        width: 300px;
+        transition: border 0.3s ease;
+    }
+
+    .subscription-form input[type="email"]:focus {
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid;
+        border-image: linear-gradient(to right, #673ab7, #9c27b0, #e91e63);
+        border-image-slice: 1;
+    }
+
+    /* Subscribe Button */
+    .subscribe-btn {
+        background-color: #673ab7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+        background-color: #512da8;
+    }
 </style>
 
 <section class="recipe-collection">
     <!-- Recipe Filtering Section -->
-    <div class="recipe-filter">
-        <h2>Filter Recipes</h2>
-        <div class="filter-form">
-            <!-- Search Input -->
-            <div class="form-group">
-                <label for="search">Search</label>
-                <input type="text" id="search" name="search" placeholder="Search Recipes...">
-            </div>
+    <?php
 
-            <!-- Cuisine Type Filter -->
-            <div class="form-group">
-                <label for="cuisine">Cuisine</label>
-                <select id="cuisine" name="cuisine">
-                    <option value="">All</option>
-                    <option value="italian">Italian</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="indian">Indian</option>
-                    <option value="chinese">Chinese</option>
-                    <option value="french">French</option>
-                </select>
-            </div>
+    $get = $_GET['recipes'] ?? '';
 
-            <!-- Dietary Preferences Filter -->
-            <div class="form-group">
-                <label for="dietary">Dietary</label>
-                <select id="dietary" name="dietary">
-                    <option value="">All</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="gluten-free">Gluten-Free</option>
-                    <option value="dairy-free">Dairy-Free</option>
-                </select>
-            </div>
+    if (is_numeric($get)) {
+        $headings = 'Recipe Rating';
+        require './assets/partials/badge-2.php';
+        require './assets/partials/rating-page.php';
+    } else {
+        require './assets/partials/badge.php';
+    ?>
+        <div class="recipe-filter">
+            <h2>Filter Recipes</h2>
+            <div class="filter-form">
+                <!-- Search Input -->
+                <div class="form-group">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" name="search" placeholder="Search Recipes...">
+                </div>
 
-            <!-- Cooking Difficulty Filter -->
-            <div class="form-group">
-                <label for="difficulty">Difficulty</label>
-                <select id="difficulty" name="difficulty">
-                    <option value="">All</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-            </div>
+                <!-- Cuisine Type Filter -->
+                <div class="form-group">
+                    <label for="cuisine">Cuisine</label>
+                    <select id="cuisine" name="cuisine">
+                        <option value="">All</option>
+                        <option value="italian">Italian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="indian">Indian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="french">French</option>
+                    </select>
+                </div>
 
-            <!-- Apply Filters Button -->
-            <button class="apply-filters-btn">Apply Filters</button>
+                <!-- Dietary Preferences Filter -->
+                <div class="form-group">
+                    <label for="dietary">Dietary</label>
+                    <select id="dietary" name="dietary">
+                        <option value="">All</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="dairy-free">Dairy-Free</option>
+                    </select>
+                </div>
+
+                <!-- Cooking Difficulty Filter -->
+                <div class="form-group">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="">All</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <!-- Apply Filters Button -->
+                <button class="apply-filters-btn">Apply Filters</button>
+            </div>
         </div>
-    </div>
 
-    <!-- Recipe Listing Section (Placeholder for Recipe Cards) -->
-    <div class="recipe-listing">
+        <!-- Recipe Listing Section (Placeholder for Recipe Cards) -->
+        <div class="recipe-listing">
+        </div>
+
+    <?php
+    }
+    ?>
+
+</section>
+
+<section class="subscription-section">
+    <div class="subscription-container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest recipes, culinary tips, and cooking inspiration!</p>
+        <div class="subscription-form">
+            <input type="email" placeholder="Enter your email" id="subscribe-email">
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
     </div>
 </section>
 
@@ -160,15 +253,24 @@
                     if (data.length > 0) {
                         $.each(data, function(index, recipe) {
                             var recipeCard = `
-                                <div class="recipe-card">
-                                    <img src="${recipe.image_url}" alt="${recipe.title}">
-                                    <h3>${recipe.title}</h3>
-                                    <p>Cuisine: ${recipe.cuisine}</p>
-                                    <p>Difficulty: ${recipe.difficulty}</p>
-                                    <p>Dietary: ${recipe.dietary ? recipe.dietary : 'None'}</p>
-                                </div>
-                            `;
+                            <div class="recipe-card">
+                                <img src="${recipe.image_url}" alt="${recipe.title}">
+                                <h3>${recipe.title}</h3>
+                                <p>Cuisine: ${recipe.cuisine}</p>
+                                <p>Difficulty: ${recipe.difficulty}</p>
+                                <p>Dietary: ${recipe.dietary ? recipe.dietary : 'None'}</p>
+                                <button class="apply-filters-btn rate-btn" data-recipe-id="${recipe.id}" data-recipe-title="${recipe.title}">Rate</button>
+                            </div>
+                        `;
                             recipeListing.append(recipeCard);
+                        });
+
+                        // Attach click event listener to the dynamically added "Rate" buttons
+                        $('.rate-btn').click(function() {
+                            const recipeId = $(this).data('recipe-id');
+                            const recipeTitle = encodeURIComponent($(this).data('recipe-title')); // Encode title for URL
+                            const currentUrl = window.location.href.split('?')[0]; // Get the base URL
+                            window.location.href = `${currentUrl}?recipes=${recipeId}&title=${recipeTitle}`;
                         });
                     } else {
                         recipeListing.html('<p>No recipes found matching your criteria.</p>');

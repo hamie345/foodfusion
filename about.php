@@ -1,5 +1,8 @@
 <?php
 
+$heading = 'About Us';
+$description = 'About us description';
+
 require './assets/partials/head.php';
 require './assets/partials/nav.php';
 require './assets/partials/breadcrumb.php';

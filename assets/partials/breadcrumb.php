@@ -3,8 +3,8 @@
     <div class="carousel">
         <div class="carousel-item" style="background-image: url('assets/images/bg2.jpg')">
             <div class="carousel-content">
-                <h2>About Us</h2>
-                <p>Promoting home cooking and culinary creativity among food enthusiasts worldwide.</p>
+                <h2><?= $heading ?></h2>
+                <p><?= $description ?></p>
             </div>
         </div>
     </div>

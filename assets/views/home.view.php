@@ -166,9 +166,6 @@
 </style>
 
 <!-- Three Cards Section -->
-    <?php
-    require './assets/partials/badge.php';
-    ?>
 <div class="about-cards">
     <div class="card">
         <img src="./assets/images/bg2.jpg" alt="Philosophy">
@@ -214,29 +211,6 @@
         </div>
     </div>
 </section>
-
-<!-- Title Bar -->
-<div class="title-bar">
-    <h1>Meet Our Team</h1>
-    <p>Discover what drives us to bring the best recipes and cooking tips to your table.</p>
-    <hr>
-</div>
-<div class="about-cards">
-    <div class="card">
-        <img src="./assets/images/users/user-1.jpg" alt="Philosophy">
-        <h3>Hawah</h3>
-    </div>
-
-    <div class="card">
-        <img src="./assets/images/users/user-2.jpg" alt="Values">
-        <h3>Vanessa</h3>
-    </div>
-
-    <div class="card">
-        <img src="./assets/images/users/user-3.jpg" alt="Team">
-        <h3>Hamie</h3>
-    </div>
-</div>
 
 <section class="subscription-section">
     <div class="subscription-container">

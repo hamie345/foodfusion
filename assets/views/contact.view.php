@@ -135,19 +135,79 @@
         display: block;
         /* Visible when the FAQ item is open */
     }
+
+
+    /* Subscription Section */
+    .subscription-section {
+        background: rgba(103, 58, 183, 0.6);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 50px 20px;
+        text-align: center;
+        color: white;
+        margin-top: 50px;
+    }
+
+    .subscription-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .subscription-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .subscription-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .subscription-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .subscription-form input[type="email"] {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        width: 300px;
+        transition: border 0.3s ease;
+    }
+
+    .subscription-form input[type="email"]:focus {
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid;
+        border-image: linear-gradient(to right, #673ab7, #9c27b0, #e91e63);
+        border-image-slice: 1;
+    }
+
+    /* Subscribe Button */
+    .subscribe-btn {
+        background-color: #673ab7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+        background-color: #512da8;
+    }
 </style>
 
 <section class="contact-page">
     <!-- Banner Section (Assuming you have this from previous steps) -->
-    <div class="banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-content">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> / Contact Us
-            </div>
-            <h2>Contact Us</h2>
-        </div>
-    </div>
+    <?php
+    require './assets/partials/badge.php';
+    ?>
 
     <div class="contact-container">
         <!-- Contact Form -->
@@ -201,6 +261,17 @@
                 </div>
             </div>
             <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</section>
+
+<section class="subscription-section">
+    <div class="subscription-container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest recipes, culinary tips, and cooking inspiration!</p>
+        <div class="subscription-form">
+            <input type="email" placeholder="Enter your email" id="subscribe-email">
+            <button class="subscribe-btn">Subscribe</button>
         </div>
     </div>
 </section>
