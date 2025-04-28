@@ -5,6 +5,9 @@
             <div class="carousel-content">
                 <h2><?= $heading ?></h2>
                 <p><?= $description ?></p>
+                <?php
+                require './assets/partials/badge.php';
+                ?>
             </div>
         </div>
     </div>

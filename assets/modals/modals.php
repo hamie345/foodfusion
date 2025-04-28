@@ -9,7 +9,7 @@
             <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="password" id="password" placeholder="Password" required>
-            <input type="password" name="password-confirmation" id="password-confirmation" placeholder="Confirm Password" required>
+            <input type="password" name="passwordConfirmation" id="password-confirmation" placeholder="Confirm Password" required>
             <button type="button" class="join-us-btn" id="btn-join">Join</button>
             <a class="btn-left" id="btn-login">Login</a>
         </form>

@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['action']) && $_GET['act
     $firstname = sanitize($_POST['firstname']);
     $lastname = sanitize($_POST['lastname']);
     $email = sanitize($_POST['email']);
-    $password = $_POST['password']; // Do not sanitize passwords directly
-    $passwordConfirmation = $_POST['passwordConfirmation']; // Do not sanitize passwords directly
+    $password = $_POST['password'];
+    $passwordConfirmation = $_POST['passwordConfirmation'];
 
     // Array to store errors
     $errors = [];

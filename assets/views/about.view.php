@@ -166,9 +166,6 @@
 </style>
 
 <!-- Three Cards Section -->
-<?php
-require './assets/partials/badge.php';
-?>
 <!-- Title Bar -->
 <div class="title-bar">
     <h1>Our Culinary Philosophy</h1>

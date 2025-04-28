@@ -151,17 +151,6 @@
 
 <section class="recipe-collection">
     <!-- Recipe Filtering Section -->
-    <?php
-
-    $get = $_GET['recipes'] ?? '';
-
-    if (is_numeric($get)) {
-        $headings = 'Recipe Rating';
-        require './assets/partials/badge-2.php';
-        require './assets/partials/rating-page.php';
-    } else {
-        require './assets/partials/badge.php';
-    ?>
         <div class="recipe-filter">
             <h2>Filter Recipes</h2>
             <div class="filter-form">
@@ -215,11 +204,6 @@
         <!-- Recipe Listing Section (Placeholder for Recipe Cards) -->
         <div class="recipe-listing">
         </div>
-
-    <?php
-    }
-    ?>
-
 </section>
 
 <section class="subscription-section">

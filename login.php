@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection details
     $servername = "localhost";
     $username = "root";
-    $dbpassword = ""; // Database password
+    $dbpassword = "";
     $dbname = "foodfusion";
 
     try {
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Check connection
         if ($conn->connect_error) {
-            throw new Exception("Connection failed: " . $conn->connect_error);
+            throw new Exception("Database connection failed: " . $conn->connect_error);
         }
 
         // Prepare and execute the query to fetch user data
-        $stmt = $conn->prepare("SELECT id, password, failed_attempt, last_attempt FROM users WHERE email = ?");
+        $stmt = $conn->prepare("SELECT `id`, `password`, `failed_attempt`, `last_attempt` FROM users WHERE `email` = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Check for account lockout
             $failed_attempt = $user['failed_attempt'];
             $last_attempt = strtotime($user['last_attempt']);
-            $lockout_duration = 60; // 1 minute lockout
+            $lockout_duration = 60; // 60 seconds lockout
 
             if ($failed_attempt >= 3 && (time() - $last_attempt) < $lockout_duration) {
                 $remaining_time = $lockout_duration - (time() - $last_attempt);
@@ -66,11 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verify password
             if (password_verify($password, $user['password'])) {
                 // Password is correct, reset failed attempts
-                $stmt = $conn->prepare("UPDATE users SET failed_attempt = 0 WHERE id = ?");
+                $stmt = $conn->prepare("UPDATE users SET failed_attempt = 0, last_attempt = NULL WHERE id = ?");
                 $stmt->bind_param("i", $user['id']);
                 $stmt->execute();
 
-                // Set session variables (example)
+                // Set session variables
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['email'] = $email;
 
@@ -84,8 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bind_param("ii", $new_failed_attempt, $user['id']);
                 $stmt->execute();
 
+                $attempts_remaining = max(0, 3 - $new_failed_attempt);
+                $lock_message = $new_failed_attempt >= 3 ? "Account locked for $lockout_duration seconds." : "$attempts_remaining attempts remaining.";
+                
                 header('Content-Type: application/json');
-                echo json_encode(array('success' => false, 'message' => 'Invalid email or password. ' . (3 - $new_failed_attempt) . ' attempts remaining.'));
+                echo json_encode(array('success' => false, 'message' => 'Invalid email or password. ' . $lock_message));
                 exit;
             }
         } else {
@@ -100,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(array('success' => false, 'message' => 'Login failed. Please try again.'));
         exit;
     } finally {
-        if ($conn) {
+        if (isset($conn)) {
             $conn->close();
         }
     }

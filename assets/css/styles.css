@@ -86,7 +86,7 @@ body {
   padding: 20px;
 }
 
-.footer-column {
+.footer-column, .contact-column {
   flex: 1;
   margin: 0 15px;
 }
@@ -104,13 +104,20 @@ body {
 .footer-column li {
   margin-bottom: 8px;
 }
+ .contact-column .social-links a {
+  color: #333;
+ }
+
+ .mt-10 {
+  margin-top: 10px;
+ }
 
 .footer-column a {
   color: #d1c4e9;
   text-decoration: none;
 }
 
-.footer-column a:hover {
+.footer-column a:hover, .contact-column a:hover {
   color: #9575cd;
 }
 
@@ -119,6 +126,10 @@ body {
   margin-right: 10px;
   font-size: 1.5rem;
   color: white;
+}
+
+.social-contact-links {
+  margin-bottom: 20px;
 }
 
 .social-links a:hover {

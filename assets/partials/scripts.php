@@ -55,7 +55,6 @@
             // Get the current login index
             let loginIndex = parseInt($("#form-title").data("login-index"));
 
-            // Check if in login mode
             if (loginIndex === 1) {
                 // Handle login submission
                 let formData = {
@@ -63,33 +62,27 @@
                     password: $("#password").val()
                 };
 
-                // Validate the form
                 if (!validateLoginForm(formData)) {
                     return; // Stop if validation fails
                 }
 
-                // Submit the form data using AJAX to login.php
                 $.ajax({
                     type: "POST",
                     url: "login.php",
                     data: formData,
+                    dataType: "json",
                     success: function(response) {
-                        // Handle the JSON response
                         if (response.success) {
                             showMessageModal("Login Successful!", response.message);
-                            // Reload the page after a short delay to show the success message
                             setTimeout(function() {
                                 location.reload();
-                            }, 2000); // Adjust the delay as needed
+                            }, 2000);
                         } else {
-                            // Show error message in modal
                             showMessageModal("Login Failed", response.message);
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
-                        // Handle errors
-                        console.error("Login error:", textStatus, errorThrown);
-                        showMessageModal("Login Failed", "Please try again. Error: " + textStatus + ", " + errorThrown);
+                        showMessageModal("Login Failed", "An error occurred: " + textStatus);
                     }
                 });
             } else {

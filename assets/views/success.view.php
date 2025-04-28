@@ -204,66 +204,11 @@
 </style>
 
 <section class="contact-page">
-
     <div class="contact-container">
         <!-- Contact Form -->
         <div class="contact-form">
-            <h2>Send Us a Message</h2>
-            <form id="contactForm" method="post" action="contact-submit.php">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-            <div id="form-message"></div> <!-- Element to display form submission messages -->
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="faq-section">
-            <h2>FAQ</h2>
-            <div class="contact-column">
-                <div class="social-contact-links">
-                    <a href="#"><i class="fa-solid fa-envelope"></i> info@foodfusion.org</a><br>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i> +265991025915</a>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    How can I submit my own recipes to FoodFusion?
-                </div>
-                <div class="faq-answer">
-                    We're always looking for new and exciting recipes to share with our community! Please visit our "Submit a Recipe" page to share your creations with us.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    How can I submit my own recipes to FoodFusion?
-                </div>
-                <div class="faq-answer">
-                    We're always looking for new and exciting recipes to share with our community! Please visit our "Submit a Recipe" page to share your creations with us.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    Is there a cost to use FoodFusion?
-                </div>
-                <div class="faq-answer">
-                    No, FoodFusion is completely free to use. Our goal is to provide a platform for sharing and discovering culinary inspiration without any cost to our users.
-                </div>
-            </div>
-            <!-- Add more FAQ items as needed -->
+            <h2>Your Message was sent successfully</h2>
+            <a href="contact.php" class="submit-btn">Back</a>
         </div>
     </div>
 </section>
